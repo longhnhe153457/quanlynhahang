@@ -50,7 +50,7 @@ public class FilterControl extends HttpServlet {
         request.setAttribute("pid", pid);
         request.getRequestDispatcher("ManagerEmployee.jsp").forward(request, response);
         }
-
+//adfsssssssssssssssss
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
