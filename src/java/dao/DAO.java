@@ -199,7 +199,7 @@ public class DAO {
         
     }
     public void insertcategory1(String name){
-         String query = "insert into category(cname) values(?)";
+         String query = "insert category(cname) values(?)";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);

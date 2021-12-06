@@ -37,9 +37,9 @@ public class Addcategory extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
          request.setCharacterEncoding("UTF-8");
        DAO dao=new DAO();
-          String name = request.getParameter("image");
+          String name = request.getParameter("name");
          dao.insertcategory1(name);
-      response.sendRedirect("Category.jsp");
+      response.sendRedirect("Categorylist");
           
     }
 

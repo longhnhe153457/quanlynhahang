@@ -23,7 +23,7 @@
                         <h2>Add category</h2>
                         <div class="form-group">
                             <label for="exampleInputEmail1">name</label>
-                            <input name="image" type="text" class="form-control" id="exampleInputEmail1" placeholder="Image">
+                            <input name="name" type="text" class="form-control" id="exampleInputEmail1" placeholder="name">
                         </div>
                         <button type="submit" class="btn btn-primary">Add Food</button>
                     </form>
