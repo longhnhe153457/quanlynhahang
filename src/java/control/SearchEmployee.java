@@ -44,7 +44,7 @@ public class SearchEmployee extends HttpServlet {
         List<Position> listP = dao.getAllPosition();
         request.setAttribute("list", list);
         request.setAttribute("listP", listP);
-        request.getRequestDispatcher("ManagerEmployee.jsp").forward(request, response);
+        request.getRequestDispatcher("newEmployee.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

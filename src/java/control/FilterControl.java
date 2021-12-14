@@ -48,7 +48,7 @@ public class FilterControl extends HttpServlet {
         request.setAttribute("list", list);
         request.setAttribute("listP", listP);
         request.setAttribute("pid", pid);
-        request.getRequestDispatcher("ManagerEmployee.jsp").forward(request, response);
+        request.getRequestDispatcher("newEmployee.jsp").forward(request, response);
         }
 //adfsssssssssssssssss
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
