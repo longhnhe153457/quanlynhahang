@@ -34,9 +34,9 @@ public class SignupControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String user=request.getParameter("user");
-       String pass= request.getParameter("pass");
-       String repass=request.getParameter("repass");
+       String user=request.getParameter("newuser");
+       String pass= request.getParameter("newpass");
+       String repass=request.getParameter("newrepass");
        if(!pass.equals(repass)){
            response.sendRedirect("Login.jsp");
        }

@@ -29,20 +29,20 @@
                 <div class="tab-body">
                     <form class="form-signup" action ="signup" method="post">
                         <div class="form-element">
-                            <input type="text" placeholder="Username" name="user">
+                            <input type="text" placeholder="Username" name="newuser">
                         </div>
                         <div class="form-element">
-                            <input type="password" placeholder="Password" name="pass">
+                            <input type="password" placeholder="Password" name="newpass">
                         </div>
                         <div class="form-element">
-                            <input type="password" placeholder="Repassword" name="repass">
+                            <input type="password" placeholder="Repassword" name="newrepass">
                         </div>
                         <div class="form-element">
                             <button type="submit">Sign Up</button>
                         </div>
                     </form>
                 </div>
-    <div class="tab-body active">
+              <div class="tab-body active">
 
                     <form class="form-signin" action ="login" method="post">
                         <div class="form-element">
@@ -51,11 +51,7 @@
                         <div class="form-element">
                             <input type="password" value="${password}" placeholder="Password" name="pass">
                         </div>
-<!--                     <div class="form-group form-check">
-                            <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                        </div>
-            -->
+                 <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>
                         <div class="form-element">
                             <button type="submit">Sign In</button>
                         </div>

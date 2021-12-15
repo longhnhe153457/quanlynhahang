@@ -52,11 +52,12 @@ public class LoginControl extends HttpServlet {
             throws ServletException, IOException {
          Cookie cookies[] = request.getCookies();
         if (cookies != null) {
+            
             for (Cookie c : cookies) {
-                if (c.getName().equals("username")) {
+                if (c.getName().equals("userC")) {
                     request.setAttribute("username", c.getValue());
                 }
-                if (c.getName().equals("password")) {
+                if (c.getName().equals("passC")) {
                     request.setAttribute("password", c.getValue());
                 }
             }
@@ -76,7 +77,6 @@ public class LoginControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         DAO dao = new DAO();
@@ -84,16 +84,20 @@ public class LoginControl extends HttpServlet {
         if (a == null) {
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
+            String remember = request.getParameter("remember");
+                if (remember != null) {
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);
             
-            Cookie u = new Cookie("username", user);
-            Cookie p = new Cookie("password", pass);
+            Cookie u = new Cookie("userC", user);
+            Cookie p = new Cookie("passC", pass);
             u.setMaxAge(60);
             p.setMaxAge(60);
             response.addCookie(u);
             response.addCookie(p);
-           response.sendRedirect("HomeControl");
+        
+        }
+                   response.sendRedirect("HomeControl");
         }
     }
 

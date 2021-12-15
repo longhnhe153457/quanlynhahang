@@ -38,10 +38,9 @@
                     <c:if test="${sessionScope.acc!=null}">
                     <li><a href="#">Hello ${sessionScope.acc.user}</a></li>
                     <li><a href="logout">Logout</a></li>
-
                 </c:if>
                 <c:if test="${sessionScope.acc==null}">         
-                    <li><a href="Login.jsp">Login</a></li>
+                    <li><a href="login">Login</a></li>
                     </c:if> 
 
             </ul>
