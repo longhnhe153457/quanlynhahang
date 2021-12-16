@@ -29,6 +29,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name Category</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +38,11 @@
                         <tr>
                             <td>${o.categoryID}</td>
                             <td>${o.cname}</td>
+                            <td><a href="editcategory?pid=${o.categoryID}"
+                           class="btn btn-info" role="button">Update</a></td>
+                    <td><a href="deletecategory?pid=${o.categoryID}" class="btn btn-info" role="button">Delete</a></td> 
                     </c:forEach>
+                            
                 </tbody>
                                                      
 

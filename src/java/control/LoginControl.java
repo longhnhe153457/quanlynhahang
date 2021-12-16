@@ -83,22 +83,24 @@ public class LoginControl extends HttpServlet {
         Account a = dao.login(user, pass);
         if (a == null) {
             request.getRequestDispatcher("Login.jsp").forward(request, response);
-        } else {
+        } else {           
             String remember = request.getParameter("remember");
-                if (remember != null) {
+          
             HttpSession session = request.getSession();
-            session.setAttribute("acc", a);
-            
+            session.setAttribute("acc", a);      
             Cookie u = new Cookie("userC", user);
             Cookie p = new Cookie("passC", pass);
             u.setMaxAge(60);
+                 if (remember != null) {
             p.setMaxAge(60);
+                 }
+                 else{
+                     p.setMaxAge(0);
+                 }
             response.addCookie(u);
-            response.addCookie(p);
-        
+            response.addCookie(p);          
         }
-                   response.sendRedirect("HomeControl");
-        }
+                response.sendRedirect("HomeControl");
     }
 
     /**

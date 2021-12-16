@@ -452,4 +452,15 @@ public class DAO {
 //        DAO dao = new DAO();
 //        System.out.println(dao.count());
 //    }
+
+    public void deleteCategory(String id) {
+         String query="delete from category where cid=?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            ps.executeUpdate();
+        }catch (Exception e) {
+        }
+    }
     }

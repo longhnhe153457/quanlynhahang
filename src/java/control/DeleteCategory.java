@@ -6,7 +6,6 @@
 package control;
 
 import dao.DAO;
-import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author hoang
  */
-@WebServlet(name = "SignupControl", urlPatterns = {"/signup"})
-public class SignupControl extends HttpServlet {
+@WebServlet(name = "DeleteCategory", urlPatterns = {"/deletecategory"})
+public class DeleteCategory extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,23 +33,11 @@ public class SignupControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String user=request.getParameter("newuser");
-       String pass= request.getParameter("newpass");
-       String repass=request.getParameter("newrepass");
-       if(!pass.equals(repass)){
-           response.sendRedirect("Login.jsp");
-       }
-       else{
-           DAO dao=new DAO();
-           Account a=dao.checkAccount(user);
-           if(a==null){
-               dao.signup(user, pass);
-               response.sendRedirect("Login.jsp");
-           }
-           else{
-               response.sendRedirect("Login.jsp");
-           }
-       }
+          response.setContentType("text/html;charset=UTF-8");
+      String id =request.getParameter("pid");
+      DAO dao=new DAO();
+      dao.deleteCategory(id);
+      response.sendRedirect("Categorylist");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
